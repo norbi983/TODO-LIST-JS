@@ -12,11 +12,11 @@
     padding: 0;
 }
 
-.tasks__button--toogleDone {
+.tasks__button--toggleDone {
     background: hsl(120, 94%, 27%);
 }
 
-.tasks__button--toogleDone:hover {
+.tasks__button--toggleDone:hover {
     background: hsl(120, 94%, 27%);
 }
 
