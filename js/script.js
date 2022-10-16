@@ -18,9 +18,9 @@
 
     const toggleTaskDone = (taskIndex) => {
         tasks[taskIndex].done = !tasks[taskIndex].done;
-        render;
+        render();
     };
-    
+
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
@@ -72,7 +72,7 @@
         if (newTaskContent !== "") {
             addNewTask(newTaskContent);
             newTaskElement.value = "";
-           
+
         }
 
         newTaskElement.focus();
@@ -84,11 +84,11 @@
 
         const from = document.querySelector(".js-form");
         from.addEventListener("submit", onFormSubmint);
-        
+
     };
 
     init();
-    
+
 }
 
 
