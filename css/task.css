@@ -37,6 +37,6 @@
     padding: 15px;
 }
 
-.task__content--done {
-    text-decoration: line-through;
+.tasks__content--done {
+    text-decoration-line: line-through;
 }
