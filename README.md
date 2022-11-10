@@ -1,7 +1,8 @@
 # Hello
 
 # Distripction
-Welcome, my names is *Norbert Mszyca*. Here is my to do list work. made in css, javaScript and html.
+Welcome, my names is *Norbert Mszyca*. This is my next project with immutability application. I added two buttons that show and hide tasks. I am waiting for your opinions :)
+
 
 # Demo
 
@@ -13,3 +14,5 @@ Welcome, my names is *Norbert Mszyca*. Here is my to do list work. made in css, 
 - CSS
 - javaScript
 - BEM
+
+# Thank you for your interest in my project.
