@@ -10,6 +10,7 @@
     height: 30px;
     border: none;
     padding: 0;
+    transition: 0.5s;
 }
 
 .tasks__button--toggleDone {
@@ -41,4 +42,8 @@
 
 .tasks__content--done {
     text-decoration: line-through;
+}
+
+.tasks__item--hidden {
+    display: none;
 }

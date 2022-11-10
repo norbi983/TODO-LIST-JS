@@ -1,24 +1,36 @@
 {
 
-    const tasks = [];
+    let tasks = [];
+
+    let hideDoneTasks = false;
 
     const welcome = () => {
         console.log("Cześć!");
     };
 
     const addNewTask = (newTaskContent) => {
-        tasks.push({ content: newTaskContent });
+        tasks = [
+            ...tasks, { content: newTaskContent },
+        ];
         render();
     };
 
     const removeTask = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            ...tasks.slice(taskIndex + 1),
+        ];
         render();
     };
 
     const toggleTaskDone = (taskIndex) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done;
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            { ...tasks[taskIndex], done: !tasks[taskIndex].done },
+            ...tasks.slice(taskIndex + 1),
+        ];
         render();
+
     };
 
     const bindEvents = () => {
@@ -39,12 +51,12 @@
         });
     };
 
-    const render = () => {
+    const renderTasks = () => {
         let htmlString = "";
 
         for (const task of tasks) {
             htmlString += `
-                <li class="tasks__item js-tasks">
+                <li class="tasks__item${task.done && hideDoneTasks ? "tasks__item--hidden" : ""} js-tasks">
                      <button class="tasks__button tasks__button--toggleDone js-toggleDone">
                         ${task.done ? "✔️" : ""}
                  </button>
@@ -59,36 +71,86 @@
         }
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
-
-        bindEvents();
     };
 
-    const onFormSubmint = (event) => {
-        event.preventDefault();
+    const renderButtons = () => {
+        const buttonsElement = document.querySelector(".js-buttons");
 
-        const newTaskElement = document.querySelector(".js-newTask");
-        const newTaskContent = newTaskElement.value.trim();
+        if (!tasks.length) {
+            buttonsElement.innerHTML = "";
+            return;
+        };
 
-        if (newTaskContent !== "") {
-            addNewTask(newTaskContent);
-            newTaskElement.value = "";
-
-        }
-
-        newTaskElement.focus();
+        buttonsElement.innerHTML = `
+            <button class="buttons__section js-toggleHideDoneTasks">
+            ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone </button>
+            <button class="buttons__section js-markAllDone"
+            ${tasks.every((task) => task.done) ? "disabled" : ""}>
+            ukończ wszystkie</button>`;
     };
 
-    const init = () => {
+    const markAllDone = () => {
+        tasks = tasks.map((task) => ({
+            ...task, done: true
+        }));
         render();
-        welcome();
-
-        const form = document.querySelector(".js-form");
-        form.addEventListener("submit", onFormSubmint);
-
     };
 
-    init();
+    const toggleHideDoneTasks = () => {
+        hideDoneTasks = !hideDoneTasks;
+        render();
+    };
+
+    const bindButtonsEvents = () => {
+        const markAllDoneButton = document.querySelector(".js-markAllDone");
+
+        if (markAllDoneButton) {
+            markAllDoneButton.addEventListener("click", markAllDone);
+        };
+
+        const toggleHideDoneTasksButton = document.querySelector(".js-toggleHideDoneTasks");
+
+        if (toggleHideDoneTasksButton) {
+            toggleHideDoneTasksButton.addEventListener("click", toggleHideDoneTasks);
+        };
+    };
+
+    const render = () => {
+        renderTasks();
+        renderButtons();
+        bindEvents();
+        bindButtonsEvents();
+    };
+
+
+const onFormSubmint = (event) => {
+    event.preventDefault();
+
+    const newTaskElement = document.querySelector(".js-newTask");
+    const newTaskContent = newTaskElement.value.trim();
+
+    if (newTaskContent !== "") {
+        addNewTask(newTaskContent);
+        newTaskElement.value = "";
+
+    }
+
+    newTaskElement.focus();
+};
+
+const init = () => {
+    render();
+    welcome();
+
+    const form = document.querySelector(".js-form");
+    form.addEventListener("submit", onFormSubmint);
+
+};
+
+init();
 
 }
+
+
 
 

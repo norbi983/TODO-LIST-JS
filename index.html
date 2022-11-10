@@ -14,6 +14,7 @@
     <link href="css/section.css" rel="stylesheet">
     <link href="css/form.css" rel="stylesheet">
     <link href="css/task.css" rel="stylesheet">
+    <link href="css/buttons.css" rel="stylesheet">
     <script src="js/script.js" defer></script>
     <title>Prosta linia zadań</title>
 </head>
@@ -35,9 +36,12 @@
             </div>
         </section>
         <section class="section">
-            <h3 class="section__header">
-                Lista zadań
-            </h3>
+           <header class="section__header"><h3>Lista zadań</h3>
+            <div class="buttons js-buttons">
+                <button class="buttons__section js-toggleHideDoneTasks"></button>
+                <button class="buttons__section js-markAllDone"></button>
+            </div>
+            </header>
             <div class="section__content">
                 <ul class="tasks js-tasks">
                 </ul>
