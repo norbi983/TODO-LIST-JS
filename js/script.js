@@ -122,32 +122,31 @@
         bindButtonsEvents();
     };
 
+    const onFormSubmint = (event) => {
+        event.preventDefault();
 
-const onFormSubmint = (event) => {
-    event.preventDefault();
+        const newTaskElement = document.querySelector(".js-newTask");
+        const newTaskContent = newTaskElement.value.trim();
 
-    const newTaskElement = document.querySelector(".js-newTask");
-    const newTaskContent = newTaskElement.value.trim();
+        if (newTaskContent !== "") {
+            addNewTask(newTaskContent);
+            newTaskElement.value = "";
 
-    if (newTaskContent !== "") {
-        addNewTask(newTaskContent);
-        newTaskElement.value = "";
+        }
 
-    }
+        newTaskElement.focus();
+    };
 
-    newTaskElement.focus();
-};
+    const init = () => {
+        render();
+        welcome();
 
-const init = () => {
-    render();
-    welcome();
+        const form = document.querySelector(".js-form");
+        form.addEventListener("submit", onFormSubmint);
 
-    const form = document.querySelector(".js-form");
-    form.addEventListener("submit", onFormSubmint);
+    };
 
-};
-
-init();
+    init();
 
 }
 
