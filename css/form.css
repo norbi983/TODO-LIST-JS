@@ -21,6 +21,7 @@
     padding: 10px;
     border: none;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
 .form__button:hover {
@@ -29,4 +30,5 @@
     padding: 10px;
     border: none;
     border-radius: 5px;
+    transform: scale(1.1);
 }
