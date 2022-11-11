@@ -8,4 +8,8 @@ html {
 body {
     font-family: 'Lato', sans-serif;
     background-color: aliceblue;
+    word-break: break-word;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 } 

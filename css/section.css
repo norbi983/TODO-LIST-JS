@@ -5,7 +5,7 @@
 
 .section__header {
     border-bottom: 1px solid rgba(188, 184, 184, 0.812);
-    padding: 10px;
+    padding: 20px;
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 15px;

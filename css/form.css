@@ -1,12 +1,15 @@
 .form {
+    padding: 10px;
     display: grid;
     grid-template-columns: 1fr auto;
-    grid-gap: 15px;
+    grid-gap: 10px;
 }
 
 @media(max-width: 768px) {
     .form {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
     }
 }
 
