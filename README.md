@@ -1,6 +1,6 @@
 # Hello
 
-# Distripction
+# Destripction
 Welcome, my names is *Norbert Mszyca*. This is my next project with immutability application. I added two buttons that show and hide tasks. I am waiting for your opinions :)
 
 
