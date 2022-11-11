@@ -5,9 +5,9 @@
 
 .section__header {
     border-bottom: 1px solid rgba(188, 184, 184, 0.812);
-    padding: 15px;
+    padding: 10px;
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: auto auto;
     grid-gap: 15px;
     justify-content: space-between;
     align-items: center;
@@ -15,6 +15,6 @@
 
 .section__content {
     margin: 0;
-    padding: 15px;
+    padding: 20px;
     border-bottom: 1px solid rgba(188, 184, 184, 0.812);
 }

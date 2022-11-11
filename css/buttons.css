@@ -7,9 +7,9 @@
 .buttons__section {
     color: rgb(5, 131, 131);
     background-color: transparent;
-    margin: 0 0 0 20px;
+    margin: 0 0 0 15px;
     border: none;
-    transition: color 0.5s;
+    transition: color 1s;
 }
 
 .buttons__section:hover {

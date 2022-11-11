@@ -4,10 +4,6 @@
 
     let hideDoneTasks = false;
 
-    const welcome = () => {
-        console.log("Cześć!");
-    };
-
     const addNewTask = (newTaskContent) => {
         tasks = [
             ...tasks, { content: newTaskContent },
@@ -56,7 +52,7 @@
 
         for (const task of tasks) {
             htmlString += `
-                <li class="tasks__item${task.done && hideDoneTasks ? " tasks__item--hidden" : ""} js-tasks">
+                <li class="tasks__item ${task.done && hideDoneTasks ? "tasks__item--hidden" : ""}">
                      <button class="tasks__button tasks__button--toggleDone js-toggleDone">
                         ${task.done ? "✔️" : ""}
                  </button>
@@ -88,12 +84,12 @@
             </button>
             <button class="buttons__section js-markAllDone"
                 ${tasks.every((task) => task.done) ? "disabled" : ""}>
-                ukończ wszystkie
+                Ukończ wszystkie
             </button>`;
     };
 
     const markAllDone = () => {
-        tasks = tasks.map((task) => ({
+        tasks = tasks.map(task => ({
             ...task, done: true
         }));
         render();
@@ -142,7 +138,6 @@
 
     const init = () => {
         render();
-        welcome();
 
         const form = document.querySelector(".js-form");
         form.addEventListener("submit", onFormSubmint);

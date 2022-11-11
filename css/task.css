@@ -10,7 +10,7 @@
     height: 30px;
     border: none;
     padding: 0;
-    transition: 0.5s;
+    transition: 1s;
 }
 
 .tasks__button--toggleDone {
@@ -19,7 +19,7 @@
 
 .tasks__button--toggleDone:hover {
     background: hsl(120, 70%, 51%);
-    transition: 0.3s;
+    transition: 1s;
 }
 
 .tasks__button--remove {
@@ -28,7 +28,7 @@
 
 .tasks__button--remove:hover {
     background: hsl(348, 70%, 51%);
-    transition: 0.3s;
+    transition: 1s;
 }
 
 .tasks__item {
