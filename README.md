@@ -1,12 +1,16 @@
 # Hello
 
-# Distripction
+# Destripction
 Welcome, my names is *Norbert Mszyca*. This is my next project with immutability application. I added two buttons that show and hide tasks. I am waiting for your opinions :)
 
 
 # Demo
 
-![prosta loista1](https://user-images.githubusercontent.com/114927587/201182790-35a21c53-7570-4af9-8eec-2fe5a67b05b8.gif)
+https://norbi983.github.io/TODO-LIST-JS/
+
+# Watch
+
+![prosta lisra 2](https://user-images.githubusercontent.com/114927587/201319148-3dc382b3-246c-472b-bb68-c5eaea57d0a5.gif)
 
 
 # Technologies
